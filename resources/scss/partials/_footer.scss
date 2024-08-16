@@ -1,0 +1,125 @@
+@import "../mixins/mixins";
+
+.footer {
+  background: rgba(56, 78, 91, 0.4);
+  color: var(--light);
+
+  &__inner {
+    padding: 5rem 0 2rem;
+    box-sizing: border-box;
+    border-bottom: 10px solid var(--primary);
+
+    @include mobile {
+      padding: 2rem 0;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    max-width: 190px;
+
+    @include mobile {
+      max-width: 120px;
+    }
+  }
+
+  &__column {
+    flex: 1;
+    padding: 0 2.5rem 0 20px;
+    box-sizing: border-box;
+    border-left: 2px solid var(--primary);
+
+    @include mobile {
+      margin: 0 0 2rem;
+      padding: 0 30px 0 20px;
+      flex: 0 0 50%;
+      border-width: 1px;
+    }
+
+    @media only screen and (max-width: 400px) {
+      flex: 0 0 100%;
+    }
+
+    &:first-child {
+      border-left: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem 2rem;
+      justify-content: center;
+
+      @include mobile {
+        flex: 0 0 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 0 3rem;
+        margin: 0;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 25px 0;
+
+        @include mobile {
+          margin: 15px 0;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          font-weight: 500;
+          color: #dfdfdc;
+          transition: 0.2s;
+
+          &:hover {
+            color: var(--light);
+          }
+        }
+      }
+    }
+  }
+
+  &__menu {
+    &-name {
+      display: block;
+      margin: 0 0 30px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: -10px;
+
+      @include mobile {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__bottom {
+    margin: 5rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 3rem;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 0 15px;
+  }
+}

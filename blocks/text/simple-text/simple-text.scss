@@ -1,0 +1,105 @@
+@import "../../../resources/scss/mixins/mixins";
+
+.simple-text {
+  .align-left {
+    text-align: left;
+  }
+  .align-center {
+    text-align: center;
+
+    .simple-text__content-ctas {
+      justify-content: center;
+    }
+  }
+  .align-right {
+    text-align: right;
+
+    .simple-text__content-ctas {
+      justify-content: flex-end;
+    }
+  }
+
+  &__inner {
+    box-sizing: border-box;
+  }
+
+  .container {
+    &.inner {
+      .simple-text__content {
+        max-width: 70%;
+        margin: 0 auto;
+
+        @include mobile {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__content {
+    .heading {
+      margin: 0 0 20px;
+    }
+
+    .pretitle {
+      margin: 0 0 3rem;
+    }
+
+    &-text {
+      > * {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        &:not(.button) {
+          color: var(--primary);
+          font-weight: 700;
+          transition: color 0.2s;
+
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      th,
+      td {
+        border: 1px solid var(--secondary);
+        padding: 8px;
+      }
+
+      ul,
+      ol {
+        li {
+          margin: 20px 0;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 3rem;
+    }
+  }
+}

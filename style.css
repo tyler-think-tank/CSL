@@ -1,0 +1,23 @@
+/*
+Theme Name: CSL Group
+Theme URI: https://csl-group.thinktankdev.org.uk
+Description: A bespoke WordPress theme for CSL Group
+Author: The Think Tank
+Author URI: https://www.thinktank.org.uk
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: CPC
+*/
+
+/* Hide the default arrow */
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow
+  b,
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__arrow
+  b {
+  display: none;
+}

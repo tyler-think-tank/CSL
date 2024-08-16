@@ -1,0 +1,104 @@
+@import "../../../resources/scss/mixins/mixins";
+
+.logo-carousel {
+  &__inner {
+    box-sizing: border-box;
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem 3rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+    flex: 0 0 33%;
+
+    @include mobile {
+      flex: 0 0 100%;
+    }
+
+    > * {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .section-title {
+      margin: 0 0 2rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  }
+
+  &__slider {
+    max-width: 42%;
+    flex: 0 0 42%;
+
+    @include mobile {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+
+    .slick-dots {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      padding: 3.5rem 0 0;
+      box-sizing: border-box;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      li {
+        all: unset;
+
+        button {
+          all: unset;
+          padding: 0;
+          border: none;
+          background: var(--light);
+          opacity: 0.2;
+          text-indent: -9999px;
+          outline: none;
+          cursor: pointer;
+          display: block;
+          border-radius: 0;
+          height: 3px;
+          width: 60px;
+        }
+
+        &.slick-active {
+          button {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__slide-group {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+
+    picture,
+    img {
+      max-height: 70px;
+      object-fit: contain;
+      max-width: 75%;
+      margin: 0 auto;
+      filter: grayscale(1) brightness(100);
+    }
+  }
+}

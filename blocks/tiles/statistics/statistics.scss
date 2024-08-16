@@ -1,0 +1,95 @@
+@import "../../../resources/scss/mixins/mixins";
+
+.statistics {
+  &__inner {
+    box-sizing: border-box;
+  }
+
+  &__top {
+    margin: 0 0 5rem;
+    text-align: center;
+
+    @include mobile {
+      margin: 0 0 3rem;
+    }
+
+    .section-title {
+      &:before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  &__item {
+    flex: 1 1 calc((100% / 4) - 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: flex-start;
+
+    @include mobile {
+      flex: 0 0 calc(100% / 2 - 1.5rem);
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex: 0 0 100%;
+    }
+
+    &-image {
+      position: relative;
+      padding-top: 50%;
+      box-sizing: border-box;
+
+      @include mobile {
+        padding-top: 25%;
+      }
+
+      picture,
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: contain;
+      }
+    }
+
+    &-content {
+      text-align: center;
+
+      > * {
+        margin: 0;
+      }
+    }
+
+    &-title {
+      font-size: clamp(32px, 2vw, 40px);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    &-description {
+      margin: 15px 0 0;
+      padding: 0 30px;
+      font-size: clamp(18px, 2vw, 21px);
+
+      @include mobile {
+        margin: 10px 0 0;
+      }
+    }
+
+    .stat-value,
+    .stat-metric {
+      display: inline-block;
+    }
+  }
+}
