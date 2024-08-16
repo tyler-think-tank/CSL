@@ -1,5 +1,5 @@
 {
-  "name": "cls-group-theme",
+  "name": "csl-group-theme",
   "version": "1.0.0",
   "scripts": {
     "development": "cross-env NODE_ENV=development webpack --config webpack.config.js",
